@@ -7,9 +7,13 @@ service Mailer {
 }
 
 message MailerRequest {
-  string name = 1;
+  repeated string send_to = 1;
+  string subject = 2;
+  optional string text = 3;
+  optional string html = 4;
 }
 
 message MailerResponse {
-  string message = 1;
+  string status_code = 1;
+  string message = 2;
 }

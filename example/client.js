@@ -17,10 +17,17 @@ const proto = grpc.loadPackageDefinition(packageDefinition).mailer;
 const client = new proto.Mailer('localhost:50051', grpc.credentials.createInsecure());
 
 // Call SayHello RPC
-client.Send({ name: 'Hai' }, (error, response) => {
-  if (error) {
-    console.error('Error calling SayHello:', error);
-    return;
-  }
-  console.log('Server response:', response.message);
-});
+client.Send(
+  {
+    send_to: ['sample@example.com'],
+    subject: 'test subject',
+    html: '<h1 style="color: cornflowerblue">Hello, world!</h1>',
+  },
+  (error, response) => {
+    if (error) {
+      console.error('Error calling SayHello:', error);
+      return;
+    }
+    console.log('Server response:', response.message);
+  },
+);
