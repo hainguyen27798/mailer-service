@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package mailer;
+
+service Mailer {
+  rpc Send (MailerRequest) returns (MailerResponse);
+}
+
+message MailerRequest {
+  string name = 1;
+}
+
+message MailerResponse {
+  string message = 1;
+}

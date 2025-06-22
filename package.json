@@ -1,0 +1,40 @@
+{
+  "name": "mailer-service",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/app.js",
+  "type": "module",
+  "scripts": {
+    "dev": "node --watch src/main.js",
+    "clean": "rimraf dist",
+    "build": "npm run clean && esbuild src/main.js --bundle --platform=node --format=cjs --outfile=dist/main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hainguyen27798/mailer-service.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hainguyen27798/mailer-service/issues"
+  },
+  "homepage": "https://github.com/hainguyen27798/mailer-service#readme",
+  "devDependencies": {
+    "@eslint/js": "^9.29.0",
+    "esbuild": "^0.25.5",
+    "eslint": "^9.29.0",
+    "eslint-config-import": "^0.13.0",
+    "eslint-config-prettier": "^10.1.5",
+    "eslint-plugin-prettier": "^5.5.0",
+    "eslint-plugin-simple-import-sort": "^12.1.1",
+    "eslint-plugin-unused-imports": "^4.1.4",
+    "globals": "^16.2.0",
+    "prettier": "^3.5.3",
+    "rimraf": "^6.0.1"
+  },
+  "dependencies": {
+    "@grpc/grpc-js": "^1.13.4",
+    "@grpc/proto-loader": "^0.7.15"
+  }
+}
