@@ -51,4 +51,6 @@ ENV GRPC_TRACE=all
 COPY --from=deps /app/node_modules ./node_modules
 COPY --from=builder /app/dist ./dist
 
+EXPOSE 50051
+
 CMD ["node", "dist/main"]

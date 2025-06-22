@@ -1,13 +1,14 @@
 {
   "name": "mailer-service",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "",
   "main": "dist/app.js",
   "type": "module",
   "scripts": {
     "dev": "GRPC_VERBOSITY=DEBUG GRPC_TRACE=all node --env-file=.env --watch src/main.js",
     "clean": "rimraf dist",
-    "build": "npm run clean && esbuild src/main.js --bundle --platform=node --format=cjs --outfile=dist/main.js"
+    "build": "npm run clean && node ./esbuild.config.js",
+    "build:prod": "sh build-prod.sh"
   },
   "repository": {
     "type": "git",
