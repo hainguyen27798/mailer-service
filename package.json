@@ -5,7 +5,7 @@
   "main": "dist/app.js",
   "type": "module",
   "scripts": {
-    "dev": "node --watch src/main.js",
+    "dev": "GRPC_VERBOSITY=DEBUG GRPC_TRACE=all node --watch src/main.js",
     "clean": "rimraf dist",
     "build": "npm run clean && esbuild src/main.js --bundle --platform=node --format=cjs --outfile=dist/main.js"
   },
